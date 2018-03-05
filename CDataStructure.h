@@ -10,16 +10,16 @@ class C{
 
 private:
   std::vector<int64_t> c; // The C array.
-  std::string alphabet;   // The alphabet that the string, text, is over.
+  std::string alphabet;   // The alphabet that the string, t, is over.
 
   /* Constructs C array from t, and assigns to c.*/
   void computeC(std::string const& t);
 
 public: 
-  /* Builds C.*/
+  /* Calling computeC(), builds c.*/
   C(std::string const &t, std::string const &a); 
 
-  /* Returns alphabet[b], where C[b] is the largest element in C that is
+  /* Returns alphabet[b], where c[b] is the largest element in c that is
    * less than or equal to saIdx. */
   char bucketChar(int64_t const saIdx) const;
 
