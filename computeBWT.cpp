@@ -1,6 +1,5 @@
 #include <vector>
 #include <string>
-#include <iostream>
 #include "computeBWT.h"
 #include "divsufsort64.h"
 
@@ -18,6 +17,7 @@ string computeBWT(string const& text) {
       bwt[i] = text[text.size()-1]; // Term char
     }
   }
+  delete [] sa;
   return bwt;
 }
 

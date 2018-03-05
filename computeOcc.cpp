@@ -9,12 +9,13 @@ vector< vector<int64_t> > computeOcc(string const & bwt, string const& alphabet)
   for (size_t i = 0; i < alphabet.size(); ++i) {
     compute_occ_row(alphabet[i], bwt, occ[i]);
   }
+  return occ;
 }
 
-void computeOcc(char c, string const& bwt, vector<int64_t> & occ_row) {
+void compute_occ_row(char c, string const& bwt, vector<int64_t> & occ_row) {
   int64_t occ = 0;
   for(size_t i = 0; i < bwt.size(); ++i) {
     if (bwt[i] == c) ++occ;
-    v[i] = occ;
+    occ_row[i] = occ;
   }
 }
