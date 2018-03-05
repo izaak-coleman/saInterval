@@ -24,7 +24,7 @@ public:
   char bucketChar(int64_t const saIdx) const;
 
   /* Returns the number of suffix array (SA) elements occuring in SA 
-   * interval [i,saIdx) that represent a suffix begining with the same
+   * interval [0,saIdx) that represent a suffix begining with the same
    * character as T[SA[saIdx]]. */
   int64_t elementRank(int64_t const saIdx) const;
 
