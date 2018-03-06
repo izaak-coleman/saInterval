@@ -7,11 +7,11 @@ class Occ {
   /* occ array from an FM-index. Classically used in conjunction with C to 
    * compute LF-mapping. Class supports classic occ(c, idx) operation. */
 private:
-  std::vector<vector<int64_t> > occ; // occ array.
-  std::string alphabet;              // Alphabet that string bwt is over.
+  std::vector<std::vector<int64_t> > occ; // occ array.
+  std::string alphabet;                   // Alphabet that string bwt is over.
 
   /* Constructs occ from bwt, and assigns to this->occ. */
-  void computeOcc(std::string const & bwt, std::string const& alphabet);
+  void computeOcc(std::string const & bwt);
 
   /* Helper f() for computeOcc(). */
   void computeOccColumn(char c, std::string const & bwt, std::vector<int64_t> & col);

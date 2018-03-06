@@ -5,7 +5,7 @@ using namespace std;
 
 C::C(std::string const & t, std::string const & a) {
   alphabet = a;
-  computeC(t)
+  computeC(t);
 }
 
 void C::computeC(string const & t) {

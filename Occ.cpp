@@ -20,6 +20,6 @@ void Occ::computeOccColumn(char c, string const & bwt, vector<int64_t> & col) {
   int64_t occ = 0;
   for(size_t i = 0; i < bwt.size(); ++i) {
     if (bwt[i] == c) ++occ;
-    occ_row[i] = occ;
+    col[i] = occ;
   }
 }
