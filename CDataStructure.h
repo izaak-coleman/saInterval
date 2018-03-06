@@ -7,7 +7,6 @@ class C{
   /* C array from an FM-index. Classically used in conjuction with occ to
    * compute LF-mapping. Functions on C required for constructSAInterval
    * are included as member functions. */
-
 private:
   std::vector<int64_t> c; // The C array.
   std::string alphabet;   // The alphabet that the string, t, is over.
@@ -16,7 +15,7 @@ private:
   void computeC(std::string const& t);
 
 public: 
-  /* Calling computeC(), builds c.*/
+  /* Calling computeC(), initialises c.*/
   C(std::string const &t, std::string const &a); 
 
   /* Returns alphabet[b], where c[b] is the largest element in c that is
@@ -31,7 +30,7 @@ public:
   /* Performs the classic C(s) operation outlined in FM-index;
    * where s is a character in the set alphabet, return the element
    * C[s] that is associated with that character. */
-  int64_t operator[] (char const s) const {
+  int64_t operator() (char const s) const {
     return c[alphabet.find(s)];
   }
 };
