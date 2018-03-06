@@ -31,8 +31,6 @@ int main() {
   for (int64_t i : sa) {
     cout << text.substr(i) << endl;
   }
-
-
   return 0;
 }
 
