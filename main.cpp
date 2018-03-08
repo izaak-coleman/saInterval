@@ -4,6 +4,7 @@
 #include "utils.h"
 #include "Occ.h"
 #include "CDataStructure.h"
+#include "constructSAInterval.h"
 
 using namespace std;
 string const SIGMA = "$ACGT";
@@ -12,12 +13,17 @@ int main() {
   string text;
   char in;
   while (cin >> in) text += in;
-  cout << text << endl;
   string bwt(computeBWT(text));
+
+  cout << text << endl;
   cout << bwt << endl;
+
   C c(text, SIGMA);
-  for (int64_t i = 0; i < text.size(); ++i) {
-    cout << c.bucketChar(i) << '\t' << c.elementRank(i) << endl;
+  Occ occ(bwt, SIGMA);
+  int64_t dollarPos = termCharIndex(bwt, '$');
+  vector<int64_t> sa = constructSAInterval(bwt, c, occ, dollarPos, 0, text.size());
+  for (int64_t i : sa) {
+    cout << i << '\t' << text.substr(i) << endl;
   }
   return 0;
 }

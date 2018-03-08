@@ -23,7 +23,7 @@ public:
   /* Support for occ(c, idx) operation: Where c is a character from the set
    * alphabet, selects the column in occ associated with c and returns the
    * integer at index idx of that column. */
-  int64_t operator() (char const c, int64_t const idx) {
+  int64_t operator() (char const c, int64_t const idx) const {
     return occ[alphabet.find(c)][idx];
   }
 };
