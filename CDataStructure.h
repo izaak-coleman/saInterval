@@ -10,6 +10,7 @@ class C{
 private:
   std::vector<int64_t> c; // The C array.
   std::string alphabet;   // The alphabet that the string, t, is over.
+  int64_t sz_t;
 
   /* Constructs C array from t, and assigns to c.*/
   void computeC(std::string const& t);
@@ -26,6 +27,8 @@ public:
    * interval [0,saIdx) that represent a suffix begining with the same
    * character as T[SA[saIdx]]. */
   int64_t elementRank(int64_t const saIdx) const;
+
+  int64_t bucketSize(char const s) const;
 
   /* Performs the classic C(s) operation outlined in FM-index;
    * where s is a character in the set alphabet, return the element

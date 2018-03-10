@@ -6,6 +6,7 @@ using namespace std;
 C::C(std::string const & t, std::string const & a) {
   alphabet = a;
   computeC(t);
+  sz_t = t.size();
 }
 
 void C::computeC(string const & t) {
@@ -30,4 +31,13 @@ int64_t C::elementRank(int64_t const saIdx) const {
   int64_t b = 0; // bucket index
   while (b < c.size() && saIdx >= c[b]) ++b;
   return saIdx - c[--b];
+}
+
+int64_t C::bucketSize(char const s) const {
+  if(alphabet.find(s) == alphabet.size() -1) {
+    return sz_t - c[alphabet.find(s)];
+  }
+  else {
+    return c[alphabet.find(s) + 1] - c[alphabet.find(s)];
+  }
 }
